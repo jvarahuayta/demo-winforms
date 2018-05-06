@@ -68,7 +68,7 @@ namespace WinForms.Demo.Infrastructure.Repositories.Base
             using (var db = new DbTodosContext())
             {
                 var teamMemberDb = db.GetDbSet<T>(dbSet).First(t => t.Id == entity.Id);
-                ReflectionUtil.MergeObjects(teamMemberDb, entity);
+                ReflectionUtil.CopyValues<T>(teamMemberDb, entity);
                 db.SaveChanges();
                 return teamMemberDb;
             }
