@@ -31,7 +31,7 @@ namespace WinForms.Demo.Gui.Views.Base
             this.Init();
         }
 
-        public void Hide()
+        public void CloseDialog()
         {
             base.Hide();
         }

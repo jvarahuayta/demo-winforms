@@ -63,7 +63,8 @@ namespace WinForms.Demo.Gui.DI
                         .RegisterType<IPlatformView, PlatformWF>(
                             new InjectionConstructor(
                                 new ResolvedParameter<IPlatformPresenter>(),
-                                new ResolvedParameter<ITeamMemberListView>()))
+                                new ResolvedParameter<ITeamMemberListView>(),
+                                new ResolvedParameter<ITodoListView>()))
                         .RegisterType<ITeamMemberListPresenter, TeamMemberListPresenter>(
                             new InjectionConstructor(
                                 new ResolvedParameter<ITeamMembersManager>()))
@@ -77,6 +78,20 @@ namespace WinForms.Demo.Gui.DI
                         .RegisterType<ITeamMemberDetailsView, TeamMemberDetailsWF>(
                             new InjectionConstructor(
                                 new ResolvedParameter<ITeamMemberDetailsPresenter>()))
+                        .RegisterType<ITodoListPresenter, TodoListPresenter>(
+                            new InjectionConstructor(
+                                new ResolvedParameter<ITodosManager>()))
+                        .RegisterType<ITodoListView, TodoListWF>(
+                            new InjectionConstructor(
+                                new ResolvedParameter<ITodoListPresenter>(),
+                                new ResolvedParameter<ITodoDetailsView>()))
+                        .RegisterType<ITodoDetailsPresenter, TodoDetailsPresenter>(
+                            new InjectionConstructor(
+                                new ResolvedParameter<ITodosManager>()))
+                        .RegisterType<ITodoDetailsView, TodoDetailsWF>(
+                            new InjectionConstructor(
+                                new ResolvedParameter<ITodoDetailsPresenter>()))
+
                         ;
                     }
                 }

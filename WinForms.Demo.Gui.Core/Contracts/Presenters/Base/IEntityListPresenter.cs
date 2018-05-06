@@ -14,6 +14,5 @@ namespace WinForms.Demo.Gui.Core.Contracts.Presenters.Base
         void OnCreateEntity();
         void OnEditEntity(T entity);
         void OnDeleteEntity(T entity);
-        void OnConfirmDeleteEntity(bool result);
     }
 }

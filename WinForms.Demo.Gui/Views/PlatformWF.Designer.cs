@@ -62,6 +62,7 @@
             this.btnTodos.TabStop = false;
             this.btnTodos.Text = "TODOs";
             this.btnTodos.UseSelectable = true;
+            this.btnTodos.Click += new System.EventHandler(this.btnTodos_Click);
             // 
             // PlatformWF
             // 

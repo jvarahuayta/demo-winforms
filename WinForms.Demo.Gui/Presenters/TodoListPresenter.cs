@@ -7,22 +7,22 @@ using WinForms.Demo.Core.Domain;
 using WinForms.Demo.Core.Services;
 using WinForms.Demo.Gui.Core.Contracts.Presenters;
 using WinForms.Demo.Gui.Core.Contracts.Views;
-using WinForms.Demo.Gui.Core.Contracts.Views.Base;
+using WinForms.Demo.Gui.Presenters.Base;
 
 namespace WinForms.Demo.Gui.Presenters
 {
-    public class TeamMemberListPresenter : Base.BasePresenter<ITeamMemberListView>, ITeamMemberListPresenter
+    public class TodoListPresenter : BasePresenter<ITodoListView>, ITodoListPresenter
     {
-        protected ITeamMembersManager manager;
+        ITodosManager manager;
 
-        public TeamMemberListPresenter(ITeamMembersManager manager)
+        public TodoListPresenter(ITodosManager manager)
         {
             this.manager = manager;
         }
 
         public void LoadEntities()
         {
-            view.ShowEntities( manager.GetAll() );
+            view.ShowEntities(manager.GetAll());
         }
 
         public void OnCreateEntity()
@@ -30,16 +30,15 @@ namespace WinForms.Demo.Gui.Presenters
             view.GoToCreateEntity();
         }
 
-        public void OnDeleteEntity(TeamMember entity)
+        public void OnDeleteEntity(Todo entity)
         {
             if (view.OpenConfirmDialog())
             {
                 manager.Delete(entity);
-                LoadEntities();
             }
         }
 
-        public void OnEditEntity(TeamMember entity)
+        public void OnEditEntity(Todo entity)
         {
             view.GoToEditEntity(entity);
         }

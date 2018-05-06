@@ -11,21 +11,22 @@ using WinForms.Demo.Gui.Presenters.Base;
 
 namespace WinForms.Demo.Gui.Presenters
 {
-    public class TeamMemberDetailsPresenter : BasePresenter<ITeamMemberDetailsView>, ITeamMemberDetailsPresenter
+    public class TodoDetailsPresenter : BasePresenter<ITodoDetailsView>, ITodoDetailsPresenter
     {
-        ITeamMembersManager manager;
+        ITodosManager manager;
 
-        public TeamMemberDetailsPresenter(ITeamMembersManager manager)
+        public TodoDetailsPresenter(ITodosManager manager)
         {
             this.manager = manager;
         }
 
-        public void OnSave(TeamMember entity)
+        public void OnSave(Todo entity)
         {
-            if(entity.Id == null)
+            if (entity.Id == null)
             {
                 manager.Create(entity);
-            }else
+            }
+            else
             {
                 manager.Update(entity);
             }

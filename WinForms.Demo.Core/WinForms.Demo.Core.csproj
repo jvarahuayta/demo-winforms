@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201805051338219_AddFinished.Designer.cs">
       <DependentUpon>201805051338219_AddFinished.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805060639152_DatetimeIsNull.cs" />
+    <Compile Include="Migrations\201805060639152_DatetimeIsNull.Designer.cs">
+      <DependentUpon>201805060639152_DatetimeIsNull.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRolesRepository.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805051338219_AddFinished.resx">
       <DependentUpon>201805051338219_AddFinished.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805060639152_DatetimeIsNull.resx">
+      <DependentUpon>201805060639152_DatetimeIsNull.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

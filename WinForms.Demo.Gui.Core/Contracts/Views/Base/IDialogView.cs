@@ -11,7 +11,7 @@ namespace WinForms.Demo.Gui.Core.Contracts.Views.Base
     {
         void OpenDialog(DATA data);
 
-        void Hide();
+        void CloseDialog();
 
         Action<RESULT> OnClose { get; set; }
     }

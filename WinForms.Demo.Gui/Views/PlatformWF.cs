@@ -17,13 +17,16 @@ namespace WinForms.Demo.Gui.Views
     {
         IPlatformPresenter presenter;
         ITeamMemberListView teamMemberView;
+        ITodoListView todosView;
 
         public PlatformWF(IPlatformPresenter presenter,
-            ITeamMemberListView teamMemberView)
+            ITeamMemberListView teamMembersView,
+            ITodoListView todosView)
         {
             InitializeComponent();
             this.presenter = presenter;
-            this.teamMemberView = teamMemberView;
+            this.teamMemberView = teamMembersView;
+            this.todosView = todosView;
             presenter.SetView(this);
         }
 
@@ -33,6 +36,9 @@ namespace WinForms.Demo.Gui.Views
             {
                 case "TEAM_MEMBERS":
                     teamMemberView.Init();
+                    break;
+                case "TODOS":
+                    todosView.Init();
                     break;
             }
         }
@@ -45,6 +51,11 @@ namespace WinForms.Demo.Gui.Views
         private void btnTeamMembers_Click(object sender, EventArgs e)
         {
             presenter.OnModuleClick("TEAM_MEMBERS");
+        }
+
+        private void btnTodos_Click(object sender, EventArgs e)
+        {
+            presenter.OnModuleClick("TODOS");
         }
     }
 }
