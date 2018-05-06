@@ -101,6 +101,7 @@
             this.txtDescription.Lines = new string[0];
             this.txtDescription.Location = new System.Drawing.Point(116, 89);
             this.txtDescription.MaxLength = 32767;
+            this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
